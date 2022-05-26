@@ -35,7 +35,7 @@ public class EmployeesService {
 		try {
 			response = restTemplate.getForObject(url, HashMap.class);
 		} catch (HttpClientErrorException ex) {
-			throw new HttpClientErrorException(HttpStatus.SERVICE_UNAVAILABLE);
+			throw new HttpClientErrorException(HttpStatus.TOO_MANY_REQUESTS);
 		}
 		
 		Object employeesData = response.get("data");
